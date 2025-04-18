@@ -1,5 +1,25 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
+
+const toastOptions = {
+  position: "top-right",
+  timeout: 3000,
+  closeOnClick: true,
+  pauseOnFocusLoss: true,
+  pauseOnHover: true,
+  draggable: true,
+  draggablePercent: 0.6,
+  showCloseButtonOnHover: false,
+  hideProgressBar: false,
+  closeButton: "button",
+  icon: true,
+  rtl: false,
+  // transition: "Vue-Toastification__fade",
+  // maxToasts: 20,
+  // newestOnTop: true,
+};
 
 createInertiaApp({
   resolve: name => {
@@ -9,6 +29,7 @@ createInertiaApp({
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
       .use(plugin)
+      .use(Toast, toastOptions)
       .mount(el)
   },
 })
