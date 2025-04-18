@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(SSLCommerzSeeder::class);
+        $this->call([SSLCommerzSeeder::class, AdminSeeder::class]);
     }
 }
