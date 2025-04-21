@@ -51,7 +51,7 @@ return [
             'driver' => 'local',
             'root' => env('UPLOAD_PATH', storage_path('app/shared')),
             'url' => env('APP_URL').'/shared',
-            'visibility' => 'public',
+            'visibility' => 'public'
         ],
 
         's3' => [
